@@ -6,6 +6,11 @@ import CommonFooter from '@/components/common/footer/CommonFooter'
 import Card from './components/Card'
 
 function index() {
+    const getData = () => {
+        const API_URL = 'https://api.unsplash.com/seerch/photos'
+        const API_KEY = ''
+    }
+
     return (
         <div className={styles.page}>
             {/* 공통 헤더 UI 부분 */}
