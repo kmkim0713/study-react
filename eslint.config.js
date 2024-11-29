@@ -23,6 +23,7 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
+      "indent": ["error", 4] // 스페이스 4칸으로 강제
     },
   },
 )
