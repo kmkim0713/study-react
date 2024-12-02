@@ -4,12 +4,31 @@ import styles from './styles/index.module.scss'
 import CommonNav from '@/components/common/navigation/CommonNav'
 import CommonFooter from '@/components/common/footer/CommonFooter'
 import Card from './components/Card'
+import axios from 'axios'
+import { useEffect } from 'react'
 
 function index() {
-    const getData = () => {
-        const API_URL = 'https://api.unsplash.com/seerch/photos'
-        const API_KEY = ''
+    const getData = async () => {
+        const API_URL = 'https://api.unsplash.com/search/photos';
+        const API_KEY = '20nJN4oV7niYnnXSTL0KNU1MIeADNYnyiRobOTTR70A';
+        const PER_PAGE = 30;
+
+        const searchValue = 'Korea';
+        const pageValue = 100;
+
+        try{
+            const res = await axios.get(`${API_URL}?query=${searchValue}&client_id=${API_KEY}&page=${pageValue}&per_page=${PER_PAGE}`);
+            console.log(res);
+
+        } catch (err){
+            console.log(err);
+        }
     }
+
+    useEffect(() => {;
+        getData();
+    }, []);
+    
 
     return (
         <div className={styles.page}>
