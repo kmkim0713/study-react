@@ -1,6 +1,11 @@
+import { CardDTO } from '../types/card';
 import styles from './Card.module.scss'
 
-function Card() {
+interface Props {
+    data: CardDTO
+}
+
+function Card({data}: Props) {
 
     const openDialog = () => {
         console.log('함수 호출');
@@ -8,7 +13,7 @@ function Card() {
     
     return  (
         <div className={styles.card} onClick={openDialog}>
-            <img src="" alt="" className={styles.card__image}/>
+            <img src={data.urls.small} alt={data.alt_description} className={styles.card__image}/>
         </div>
     );
     
